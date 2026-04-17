@@ -114,6 +114,11 @@
             color: var(--text-lighter);
             font-size: 0.9em;
         }
+        
+        body.light-mode label {
+            color: var(--text-darker);
+        }
+        
         input, select {
             width: 100%;
             padding: 12px;
