@@ -125,7 +125,7 @@
             font-size: 1em;
         }
         body.light-mode input, body.light-mode select {
-            background-color: var(--bg-lighter);
+            background-color: var(--bg-darker);
             color: var(--text-dark);
             border: 1px solid var(--border-light);
         }
