@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" href="iconoSB.png">
+    <title>Shadow Boxing Trainer</title>
+</head>
+<script src="script.js"></script>
+<body>
+
+    <div class="theme-menu" id="themeMenu">
+        <button onclick="setTheme('dark')">Oscuro</button>
+        <button onclick="setTheme('light')">Claro</button>
+        <button onclick="setTheme('system')">Sistema</button>
+    </div>
+
+    <div class="header">
+        <h1>Shadow Boxing Trainer</h1>
+        <button class="settings-button" onclick="toggleThemeMenu()">⚙️</button>
+    </div>
+    <div class="container">
+
+
+        <div id="setup" class="setup">
+            <div class="controls">
+                <label for="rounds">Número de rondas:</label>
+                <select id="rounds">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3" selected>3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+
+                <label for="roundTime">Tiempo por ronda:</label>
+                <select id="roundTime">
+                    <option value="60">1 minuto</option>
+                    <option value="120" selected>2 minutos</option>
+                    <option value="180">3 minutos</option>
+                </select>
+
+                <label for="restTime">Tiempo de descanso (segundos):</label>
+                <input type="number" id="restTime" min="1" max="180" value="30">
+
+                <label for="comboPause">Pausa entre combos (segundos):</label>
+                <input type="number" id="comboPause" min="1" max="10" value="3">
+
+                <div class="mode-selector">
+                    <div class="selector-option" data-mode="normal" onclick="selectMode('normal')">Básico</div>
+                    <div class="selector-option" data-mode="advanced" onclick="selectMode('advanced')">Avanzado</div>
+                </div>
+                <input type="hidden" id="mode" value="normal">
+
+                <div class="voice-selector">
+                    <div class="selector-option" data-voice="numbers" onclick="selectVoice('numbers')">Números</div>
+                    <div class="selector-option" data-voice="names" onclick="selectVoice('names')">Nombres</div>
+                </div>
+                <input type="hidden" id="voiceType" value="numbers">
+            </div>
+            <div class="controls">
+                <button onclick="saveConfiguration()" style="background-color: var(--secondary); margin-top: 10px;">
+                    Guardar Configuración
+                </button>
+            </div>
+            <button onclick="startTraining()">Empezar Entrenamiento</button>
+        </div>
+
+        <div id="training" class="hidden">
+            <div id="countdown"></div>
+            <div id="status"></div>
+            <div id="timer">00:00</div>
+            <div id="combo"></div>
+            <button onclick="stopTraining()" id="stopBtn">Detener</button>
+        </div>
+
+
+    </div>
+</body>
+</html>
