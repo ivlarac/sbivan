@@ -166,6 +166,11 @@
             background-color: var(--primary);
             border-color: var(--primary);
         }
+        body.light-mode .selector-option.active {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
         button {
             background-color: var(--primary);
             color: white;
